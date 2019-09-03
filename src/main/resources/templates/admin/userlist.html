@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User Management - User list</title>
+<meta th:replace="fragments/static :: head"></meta>
+</head>
+<body>
+
+
+
+	<div id="root">
+		<div>
+			<nav class="navbar" th:replace="fragments/header :: header"></nav>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card m-2">
+							<div class="card-body">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th >User ID</th>
+											<th>Name</th>
+											<th>Email</th>
+											<th>User name</th>
+										</tr>
+									</thead>
+									<tbody>
+				                        <tr th:each="user, userStat : ${users}">
+				                            <td th:text="${user.userId}"></td>
+				                            <td th:text="${user.name}"></td>
+				                            <td th:text="${user.email}"></td>
+				                            <td th:text="${user.username}"></td>
+				                        </tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
